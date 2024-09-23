@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="sticky top-0 w-full Z-10">
+
+        <!-- nav bar start here -->
+    <nav class="bg-yellow-100 z-10">
+        <div class="flex justify-between items-center w-11/12 mx-auto  py-8">
+            <button onclick="home()" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-green-500 ">Home</button>
+        <div class="flex items-center gap-2">
+            <img src="./assets/logo.png" alt="">
+            <h3 class="text-2xl font-bold hidden lg:flex">Donate Bangladesh</h3>
+        </div>
+        <div class="flex items-center gap-2">
+            <img src="./assets/coin.png" alt="">
+            <p id="amount" class="text-xl font-bold">5500</p><span class="text-xl font-bold">BDT</span>
+        </div>
+        </div>
+        
+    </nav>
+    <!-- nav bar ends here -->
+
+   
+    <main class="w-11/12 mx-auto">
+        <h1 class="text-5xl font-bold mt-10">Important FAQ</h1>
+
+ <!-- Q/A starts here -->
+        <div class="collapse collapse-arrow bg-base-200 mt-10 mb-8">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is the DOM?</div>
+            <div class="collapse-content">
+              <p>The DOM (Document Object Model) is a programming interface for web documents. It represents the structure of a document as a tree of objects</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200 mb-8">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is event handling in the DOM?</div>
+            <div class="collapse-content">
+              <p>Event handling refers to the process of responding to user interactions or events (like clicks, key presses, etc.) in the DOM.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200 mb-8">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is the purpose of createElement and appendChild?</div>
+            <div class="collapse-content">
+              <p>createElement is used to create a new HTML element in the DOM, while appendChild is used to add that new element as a child to an existing element.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200 mb-8">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is the difference between innerHTML and textContent?</div>
+            <div class="collapse-content">
+              <p>innerHTML: Allows you to get or set HTML content, meaning it can include HTML tags.
+                textContent: Only retrieves or sets the text content of an element, stripping out any HTML tags.</p>
+            </div>
+          </div>
+
+    </main>
+
+    </div>
+    <!-- go home function -->
+    <script>
+      function home(){
+    window.location.href = './index.html'
+}
+    </script>
+</body>
+</html>
