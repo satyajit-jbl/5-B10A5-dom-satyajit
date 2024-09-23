@@ -12,14 +12,17 @@ function getTextValueByID(id){
 
 
 //function for error handaling
+// function error(id){
+//     if(id <=0 || isNaN(id) || id > amount || id == ""){
+//         alert('Invalid Donation amount');
+//         return;
+//     }
+// }
 
-
-// const donationNoakhali = getInputValueById('donation-noakhali');
-// const totalDonationNoakhali = getTextValueByID('total-donation-noakhali');
-// // console.log(totalDonationNoakhali, donationNoakhali);
-
+//CARD -1 - NOAKHALI
 
 const calculateNoakhali = document.getElementById('btn-donate-noakhali');
+
 calculateNoakhali.addEventListener('click', function(){
     const donationNoakhali = getInputValueById('donation-noakhali');
     const totalDonationNoakhali = getTextValueByID('total-donation-noakhali');
@@ -29,6 +32,7 @@ calculateNoakhali.addEventListener('click', function(){
         alert('Invalid Donation amount');
         return;
     }
+    // error(donationNoakhali);
 
     // console.log(totalDonationNoakhali, donationNoakhali);
 
@@ -80,7 +84,103 @@ calculateNoakhali.addEventListener('click', function(){
 
 })
 
+//CARD - 2 - FENI
 
+const calculateFeni = document.getElementById('btn-donate-feni');
+
+calculateFeni.addEventListener('click', function(){
+    const donationFeni = getInputValueById('donation-feni');
+    const totalDonationFeni = getTextValueByID('total-donation-feni');
+    const amount = getTextValueByID('amount');
+
+    if(donationFeni<=0 || isNaN(donationFeni) || donationFeni > amount || donationFeni == ""){
+        alert('Invalid Donation amount');
+        return;
+    }
+    // error(donationNoakhali);
+
+    
+
+    GtotalDonationFeni = donationFeni + totalDonationFeni;
+    FinalAmount = amount - donationFeni;
+    console.log(GtotalDonationFeni);
+
+    const totalDonationFeniEl = document.getElementById('total-donation-feni');
+    totalDonationFeniEl.innerText = GtotalDonationFeni;
+
+    const amountEl = document.getElementById('amount');
+    amountEl.innerText = FinalAmount;
+
+    
+
+          // History part 2 start
+
+          const historyItem = document.createElement('div');
+          historyItem.className = " bg-white p-3 rounded-md border-2 border-gray-300"
+          historyItem.innerHTML = `
+          <p text-xl font-bold text-black>${donationFeni} Taka is Donated for Flood Relief in Feni,Bangladesh </p>
+          
+          <p text-xs text-gray-500>${new Date()} </p>
+          `
+          const historyContainer = document.getElementById('history-section');
+          historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+
+    // Modal show
+    // let modalEl = document.getElementById('modal');
+    document.getElementById('modal').classList.remove('hidden');
+
+
+})
+
+//CARD - 3 - quota
+
+const calculatequota = document.getElementById('btn-donate-quota');
+
+calculatequota.addEventListener('click', function(){
+    const donationquota = getInputValueById('donation-quota');
+    const totalDonationquota = getTextValueByID('total-donation-quota');
+    const amount = getTextValueByID('amount');
+
+    if(donationquota<=0 || isNaN(donationquota) || donationquota > amount || donationquota == ""){
+        alert('Invalid Donation amount');
+        return;
+    }
+    // error(donationNoakhali);
+
+    
+
+    GtotalDonationquota = donationquota + totalDonationquota;
+    FinalAmount = amount - donationquota;
+    console.log(GtotalDonationquota);
+
+    const totalDonationquotaEl = document.getElementById('total-donation-quota');
+    totalDonationquotaEl.innerText = GtotalDonationquota;
+
+    const amountEl = document.getElementById('amount');
+    amountEl.innerText = FinalAmount;
+
+    
+
+          // History part 2 start
+
+          const historyItem = document.createElement('div');
+          historyItem.className = " bg-white p-3 rounded-md border-2 border-gray-300"
+          historyItem.innerHTML = `
+          <p text-xl font-bold text-black>${donationquota} Taka is Donated for Aid for Injured in the Quota Movement,Bangladesh </p>
+          
+          <p text-xs text-gray-500>${new Date()} </p>
+          `
+          const historyContainer = document.getElementById('history-section');
+          historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+
+    // Modal show
+    // let modalEl = document.getElementById('modal');
+    document.getElementById('modal').classList.remove('hidden');
+
+
+})
 // history tab
 
 const historyTab = document.getElementById('history-tab');
@@ -119,4 +219,3 @@ btnCloseModal.addEventListener('click', function(){
     document.getElementById('modal').classList.add('hidden');
     // console.log('button modal clicked');
 })
-// document.getElementById('btn-close-modal').classList.add('hidden');

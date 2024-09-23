@@ -20,7 +20,7 @@
         </div>
         <div class="flex items-center gap-2">
             <img src="./assets/coin.png" alt="">
-            <p id="amount" class="text-xl font-bold">5500</p><span class="text-xl font-bold">BDT</span>
+            <p id="amount" class="text-xl font-bold">15500</p><span class="text-xl font-bold">BDT</span>
         </div>
         </div>
         
@@ -48,7 +48,7 @@
       <div>
         <div class="flex items-center gap-4 border-2 bg-white rounded-md w-32 h-11">
             <img src="./assets/coin.png" alt="">
-            <p id="total-donation-noakhali">500</p><span>BDT</span>
+            <p id="total-donation-noakhali">5950</p><span>BDT</span>
         </div>
         <h1 class="text-2xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
         <p class="py-3">
@@ -70,15 +70,15 @@
       <div>
         <div class="flex items-center gap-4 border-2 bg-white rounded-md w-32 h-11">
             <img src="./assets/coin.png" alt="">
-            <p>0</p><span>BDT</span>
+            <p id="total-donation-feni">2500</p><span>BDT</span>
         </div>
         <h1 class="text-2xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
         <p class="py-3">
             The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.
         </p>
-        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+        <input id="donation-feni" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
         <br>
-        <button class="btn btn-primary w-full mt-3">Donate Now</button>
+        <button id="btn-donate-feni" class="btn bg-green-400 w-full mt-3">Donate Now</button>
       </div>
     </div>
   </div>
@@ -91,15 +91,15 @@
       <div>
         <div class="flex items-center gap-4 border-2 bg-white rounded-md w-32 h-11">
             <img src="./assets/coin.png" alt="">
-            <p>0</p><span>BDT</span>
+            <p id="total-donation-quota">1300</p><span>BDT</span>
         </div>
         <h1 class="text-2xl font-bold">Aid for Injured in the Quota Movement</h1>
         <p class="py-3">
             The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.
         </p>
-        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+        <input id="donation-quota" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
         <br>
-        <button class="btn btn-primary w-full mt-3">Donate Now</button>
+        <button id="btn-donate-quota" class="btn bg-green-400 w-full mt-3">Donate Now</button>
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@
 <!-- Donanation part Ends here -->
 
 <!-- popup Model part -->
- <div id="modal" class="absolute hidden left-5 lg:left-80 top-5 lg:top-80 popup text-center w-96 bg-white border-2 border-gray-300 rounded-lg">
+ <div id="modal" class="hidden fixed -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 popup text-center w-96 bg-white border-2 border-gray-300 rounded-lg">
   <h2 class="text-2xl font-bold">Congrates !</h2>
   <div class="flex justify-center py-4">
     <img class="" src="./assets/coin.png" alt="">
