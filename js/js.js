@@ -5,19 +5,18 @@ function getInputValueById(id){
 
 //function to get text value
 function getTextValueByID(id){
-    return parseFloat(document.getElementById(id).innerText)
+    return parseFloat(document.getElementById(id).innerText);
 };
-
-// faq
 
 
 //function for error handaling
-// function error(id){
-//     if(id <=0 || isNaN(id) || id > amount || id == ""){
-//         alert('Invalid Donation amount');
-//         return;
-//     }
-// }
+function error(id, amount){
+    if(id <=0 || isNaN(id) || id > amount || id == ""){
+        alert('Invalid Donation amount');
+        return false;
+    }
+    return true;
+}
 
 //CARD -1 - NOAKHALI
 
@@ -28,24 +27,39 @@ calculateNoakhali.addEventListener('click', function(){
     const totalDonationNoakhali = getTextValueByID('total-donation-noakhali');
     const amount = getTextValueByID('amount');
 
-    if(donationNoakhali<=0 || isNaN(donationNoakhali) || donationNoakhali > amount || donationNoakhali == ""){
-        alert('Invalid Donation amount');
-        return;
-    }
-    // error(donationNoakhali);
-
-    // console.log(totalDonationNoakhali, donationNoakhali);
+    // if(donationNoakhali<=0 || isNaN(donationNoakhali) || donationNoakhali > amount || donationNoakhali == ""){
+    //     alert('Invalid Donation amount');
+    //     return;
+    // }
+    // error(donationNoakhali); (wrong way, rectified below)
+    if(error(donationNoakhali, amount)){
 
     GtotalDonationNoakhali = donationNoakhali + totalDonationNoakhali;
     FinalAmount = amount - donationNoakhali;
-    console.log(GtotalDonationNoakhali);
 
     const totalDonationNoakhaliEl = document.getElementById('total-donation-noakhali');
     totalDonationNoakhaliEl.innerText = GtotalDonationNoakhali;
 
     const amountEl = document.getElementById('amount');
     amountEl.innerText = FinalAmount;
+    // History part 2 start
 
+    const historyItem = document.createElement('div');
+    historyItem.className = " bg-white p-3 rounded-md border-2 border-gray-300"
+    historyItem.innerHTML = `
+    <p text-xl font-bold text-black>${donationNoakhali} Taka is Donated for Flood relief in Noakhali, Bangladesh </p>
+    
+    <p text-xs text-gray-500>${new Date()} </p>
+    `
+    const historyContainer = document.getElementById('history-section');
+    historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+
+
+// Modal show
+
+document.getElementById('modal').classList.remove('hidden');
+    }
+    
     // History part 1 start
 
     // const p = document.createElement('p');
@@ -61,26 +75,6 @@ calculateNoakhali.addEventListener('click', function(){
     // document.getElementById('history-section').appendChild(h1);
        // History part 1 end
 
-          // History part 2 start
-
-          const historyItem = document.createElement('div');
-          historyItem.className = " bg-white p-3 rounded-md border-2 border-gray-300"
-          historyItem.innerHTML = `
-          <p text-xl font-bold text-black>${donationNoakhali} Taka is Donated for Flood relief in Noakhali, Bangladesh </p>
-          
-          <p text-xs text-gray-500>${new Date()} </p>
-          `
-          const historyContainer = document.getElementById('history-section');
-          historyContainer.insertBefore(historyItem, historyContainer.firstChild);
-
-
-    // Modal show
-    // let modalEl = document.getElementById('modal');
-    document.getElementById('modal').classList.remove('hidden');
-
-    
-    // totalDonationNoakhaliEl.innerText = totalDonationNoakhali;
-    // console.log('noakhali button clicked');
 
 })
 
@@ -97,9 +91,6 @@ calculateFeni.addEventListener('click', function(){
         alert('Invalid Donation amount');
         return;
     }
-    // error(donationNoakhali);
-
-    
 
     GtotalDonationFeni = donationFeni + totalDonationFeni;
     FinalAmount = amount - donationFeni;
@@ -110,8 +101,6 @@ calculateFeni.addEventListener('click', function(){
 
     const amountEl = document.getElementById('amount');
     amountEl.innerText = FinalAmount;
-
-    
 
           // History part 2 start
 
@@ -130,7 +119,6 @@ calculateFeni.addEventListener('click', function(){
     // let modalEl = document.getElementById('modal');
     document.getElementById('modal').classList.remove('hidden');
 
-
 })
 
 //CARD - 3 - quota
@@ -146,9 +134,6 @@ calculatequota.addEventListener('click', function(){
         alert('Invalid Donation amount');
         return;
     }
-    // error(donationNoakhali);
-
-    
 
     GtotalDonationquota = donationquota + totalDonationquota;
     FinalAmount = amount - donationquota;
@@ -159,8 +144,6 @@ calculatequota.addEventListener('click', function(){
 
     const amountEl = document.getElementById('amount');
     amountEl.innerText = FinalAmount;
-
-    
 
           // History part 2 start
 
@@ -178,7 +161,6 @@ calculatequota.addEventListener('click', function(){
     // Modal show
     // let modalEl = document.getElementById('modal');
     document.getElementById('modal').classList.remove('hidden');
-
 
 })
 // history tab
